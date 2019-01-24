@@ -76,3 +76,6 @@ gem 'ransack'
 
 # Pundit
 gem "pundit"
+
+# PgReset
+gem 'pgreset'
