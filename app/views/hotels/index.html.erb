@@ -1,0 +1,41 @@
+<h1>Hotels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Price</th>
+      <th>Facilities</th>
+      <th>Owner</th>
+      <th>Action(s)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hotels.each do |hotel| %>
+      <tr>
+        <td><%= hotel.name %></td>
+        <td><%= hotel.location %></td>
+        <td><%= hotel.price %></td>
+        <td>
+          <ul>
+            <% hotel.facilities.each do |facility| %>
+              <li><%= facility.name %></li>
+            <% end %>
+        </ul>
+        </td>
+        <td><%= hotel.user.email %></td>
+        <td>
+          <%= link_to 'Edit', edit_hotel_path(hotel) %>
+          |
+          <%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %>  
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hotel', new_hotel_path, class: 'btn btn-primary' %>

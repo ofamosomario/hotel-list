@@ -1,0 +1,32 @@
+<%= simple_form_for @hotel do |f| %>
+  <%= f.error_notification %>
+  <div class="field">
+    <%= f.input :name %>
+  </div>
+
+  <div class="field">
+    <%= f.input :location %>
+  </div>
+
+  <div class="field">
+    <%= f.input :price %>
+  </div>
+
+  <h2>Facilities:</h2>
+
+  <div id="facilities">
+    <%=f.simple_fields_for :facilities do |facilite|%>
+      <%= render 'facility_fields', f: facilite %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add facility', f, :facilities %>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

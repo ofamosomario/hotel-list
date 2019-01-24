@@ -1,0 +1,6 @@
+en:
+  generic:
+    confirmation:
+      create: 'Register was successfully created.'
+      edit: 'Register was successfully updated.'
+      delete: 'Register was successfully destroyed.'

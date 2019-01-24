@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<title>Visits</title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+
+<body>
+<div id="page">
+
+<div id="mobile-bar">
+	<a class="menu-trigger" href="#mobilemenu"><i class="fa fa-bars"></i></a>
+
+	<p class="mob-title">Home</p>
+</div>
+<div id="panel">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Contact us</h2>
+
+				<p>Pointblank Str. 14, 54321, California</p>
+
+				<div id="panel-map" style="width:100%; height:300px"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /panel -->
+
+<header id="top-wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="top" class="group">
+					<div class="row">
+						<div class="col-md-5">
+						</div>
+						<div class="col-md-2">
+							<p class="text-center">
+								<a href="#" title="See the map" id="map-icon">
+									<i class="fa fa-map-marker"></i>
+								</a>
+							</p>
+						</div>
+						<div class="col-md-5">
+							<ul id="misc">
+								<% if user_signed_in? %>
+									<li>Welcome <strong><%=current_user.email%></strong></li>
+									<li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
+								<% else %>
+									<li><%= link_to('Log In', new_user_session_path)  %>  </li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-5">
+						<nav class="nav">
+							<ul id="main-nav-left" class="navigation group">
+								<li><a href="<%=hotel_lists_url%>">Hotels List</a></li>
+								<li><a href="<%=hotel_lists_url%>">Your reservation(s)</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div id="logo-wrap" class="col-md-2 col-sm-12">
+						<h1 class="imglogo">
+							<a href="/">
+								Visits.US
+							</a>
+						</h1>
+					</div>
+					<div class="col-md-5">
+						<nav class="nav">
+							<ul id="main-nav-right" class="navigation group">
+								<% if user_signed_in? %>
+								<li><a href="<%=hotels_url%>">Register your Hotel</a></li>
+								<% end %>
+							</ul>
+					</div>
+				</div>
+				<!-- /row -->
+
+				<div id="mobilemenu"></div>
+
+			</div>
+			<!-- /col-md-12 -->
+		</div>
+		<!-- /col-md-12 -->
+	</div>
+	<!-- /container -->
+</header>

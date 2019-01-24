@@ -1,0 +1,10 @@
+<%= render 'shared/header' %>
+<main class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<%= render 'shared/flash', flash: flash %>
+			<%= yield %>
+		</div>
+	</div>
+</main>
+<%= render 'shared/footer' %>

@@ -1,0 +1,25 @@
+<div class="col-md-12">
+	<h2>Check out the last 5 hotels registred</h2>
+	<% @hotels.each do |hotel| %>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="item-listing">
+					<div class="item-container">
+						<h2 class="item-title"><a href="room.html"><%= hotel.name%></a></h2>
+						<h5 class="item-from"><%= hotel.price %></h5>
+						<hr />
+						<h3>Facilities</h3>
+						<ul>
+							<% hotel.facilities.each do |facility| %>
+							<li>
+								<%= facility.name %>
+							</li>
+							<% end %>
+						</ul>
+						<a href="#" class="button">Book</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
