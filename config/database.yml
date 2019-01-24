@@ -79,6 +79,6 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 production:
   adapter: postgresql
-  database: visit_production
+  database: postgresql-fluffy-13979
   username: visit
   socket: /var/run/unicorn.sock
