@@ -78,7 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 production:
-  <<: *default
+  adapter: postgresql
   database: visit_production
   username: visit
   password: <%= ENV['VISIT_DATABASE_PASSWORD'] %>
+  socket: /var/run/unicorn.sock
