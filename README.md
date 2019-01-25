@@ -24,7 +24,7 @@ Things you may want to cover:
 
 # Users
 
-role: owner email: owner1@gmail.com password: 12345678
-role: owner email: owner2@gmail.com password: 12345678
-role: guest email: owner1@gmail.com password: 12345678
-role: guest email: owner2@gmail.com password: 12345678
+* role: owner email: owner1@gmail.com password: 12345678
+* role: owner email: owner2@gmail.com password: 12345678
+* role: guest email: owner1@gmail.com password: 12345678
+* role: guest email: owner2@gmail.com password: 12345678
